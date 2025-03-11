@@ -1,0 +1,28 @@
+<mat-toolbar class="navbar">
+  <mat-toolbar-row class="logo-row">
+    <!-- Imaginea în stânga -->
+    <img ngSrc="assets/Images/logo.png" alt="Logo" class="logo" height="90" width="76"/>
+
+    <!-- Textul animat în mijloc -->
+    <div class="title-section">
+      <app-animated-text [text]="'Per aspera ad astra! | Academia Tehnica Militara Ferdinand I'"></app-animated-text>
+    </div>
+
+    <!-- Numele studentului și selectorul de temă în dreapta -->
+    <div class="user-section">
+      <p>Pagina personală a studentului: {{ studentName }}</p>
+      <app-theme-selector></app-theme-selector>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="nav-row">
+    <nav class="nav-buttons">
+      <a mat-button routerLink="/profil">Home</a>
+      <a mat-button routerLink="/examene">Examene</a>
+      <a mat-button routerLink="/note">Note</a>
+      <a mat-button routerLink="/restante">Restante</a>
+      <a mat-button routerLink="/forum">Forum</a>
+      <a mat-button (click)="logout()">Deconectare</a>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,22 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  mat-card {
+    width: 65%;
+    border-radius: 10px;
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+  }
+
+  .mat-raised-button,
+  .mat-button {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+  }
+}

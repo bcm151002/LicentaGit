@@ -1,0 +1,70 @@
+.navbar {
+  padding: 0;
+  height: auto;
+  background-color: var(--background-color) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-row {
+  height: 90px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribuie spațiul între elemente */
+  width: 100%;
+  max-width: 1200px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  height: 90px;
+  width: 76px;
+}
+
+.title-section {
+  flex-grow: 1;
+  text-align: center; /* Centrează textul animat */
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Spațiu între text și selectorul de temă */
+  color: var(--text-color);
+}
+
+.nav-row {
+  height: 48px;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  a {
+    height: 100%;
+    line-height: 48px;
+    flex: 1;
+    text-align: center;
+    color: var(--text-color);
+  }
+}
+
+/* Ensure mat-toolbar-row does not have fixed height */
+.mat-toolbar-row {
+  height: auto !important;
+}

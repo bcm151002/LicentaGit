@@ -1,0 +1,53 @@
+<div class="main-container" [ngClass]="themeService.isDarkTheme() ? 'dark-theme' : 'light-theme'">
+  <mat-card class="personal-data-card">
+    <mat-card-header>
+      <mat-card-title>Date personale</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="personal-info">
+        <div class="info">
+          <p><strong>Nume prenume:</strong> {{ datePersonale?.nume }} {{ datePersonale?.prenume }}</p>
+          <p><strong>Data naștere:</strong> {{ datePersonale?.dataNastere }}</p>
+          <p><strong>Localitate naștere:</strong> {{ datePersonale?.localitateNastere }}</p>
+          <p><strong>Adresă:</strong> {{ datePersonale?.adresa }}</p>
+          <p><strong>Localitate:</strong> {{ datePersonale?.localitate }}</p>
+          <p><strong>Număr telefon:</strong> {{ datePersonale?.numarTelefon }}</p>
+          <!--          <p><strong>Adresă e-mail:</strong> {{ personalData?. }}</p>-->
+          <div class="action-buttons">
+            <button mat-raised-button color="primary">Modifică număr primary</button>
+            <button mat-raised-button color="accent">Modifică adresă e-mail accent</button>
+            <button mat-raised-button color="warn">Modifică adresă e-mail warn</button>
+          </div>
+        </div>
+        <div class="photo">
+          <img src="assets/Images/profile-placeholder.jpg" alt="Student Photo" />
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="education-data-card">
+    <mat-card-header>
+      <mat-card-title>Date școlarizare</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="education-section">
+        <h3>{{ dateScolarizare?.specializare }}</h3>
+        <p><strong>Specializarea:</strong> {{ dateScolarizare?.specializare }}</p>
+        <p><strong>Promotie:</strong> {{ dateScolarizare?.promotie}}</p>
+        <!--        <p><strong>Semestru:</strong> {{ scolarizareData?.semestru }}</p>-->
+        <p><strong>Grupa:</strong> {{ dateScolarizare?.grupa }}</p>
+        <p><strong>Forma de finantare:</strong> {{ dateScolarizare?.formaFinantare }}</p>
+      </div>
+      <hr />
+      <!--      <div class="education-section">-->
+      <!--        <h3>{{ scolarizareData?.specializare }}</h3>-->
+      <!--        <p><strong>Specializarea:</strong> {{ scolarizareData?.specializare }}</p>-->
+      <!--        <p><strong>An studiu:</strong> {{ scolarizareData?.anStudiu }}</p>-->
+      <!--        <p><strong>Grupa:</strong> {{ scolarizareData?.grupa }}</p>-->
+      <!--        <p><strong>Seria:</strong> {{ scolarizareData?.serie }}</p>-->
+      <!--        <p><strong>Forma de finanțare:</strong> {{ scolarizareData?.formaFinantare }}</p>-->
+      <!--      </div>-->
+    </mat-card-content>
+  </mat-card>
+</div>

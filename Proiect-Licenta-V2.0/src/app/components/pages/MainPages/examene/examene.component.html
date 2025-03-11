@@ -1,0 +1,90 @@
+<!-- exam-schedule.component.html -->
+<div class="main-container" [ngClass]="themeService.isDarkTheme() ? 'dark-theme' : 'light-theme'">
+  <mat-card class="schedule-card">
+    <mat-card-header>
+      <mat-card-title>Program examene</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Filter Section -->
+      <div class="filter-section">
+        <mat-form-field appearance="outline">
+          <mat-label>An studiu</mat-label>
+          <mat-select [(value)]="selectedYear">
+            <mat-option *ngFor="let year of years" [value]="year">{{year}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Semestru</mat-label>
+          <mat-select [(value)]="selectedSemester">
+            <mat-option *ngFor="let sem of semesters" [value]="sem">{{sem}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>An universitar</mat-label>
+          <mat-select [(value)]="selectedAcademicYear">
+            <mat-option *ngFor="let ay of academicYears" [value]="ay">{{ay}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="show-button">
+          Afiseaza program examene
+        </button>
+      </div>
+
+      <!-- Faculty Name -->
+      <h2 class="faculty-name">Facultatea de Sisteme Informatice şi Securitate Cibernetică</h2>
+
+<!--      &lt;!&ndash; Subjects List &ndash;&gt;-->
+<!--      <div class="subjects-list">-->
+<!--        <h3>Discipline:</h3>-->
+<!--        <div *ngFor="let subject of subjects" class="subject-item">-->
+<!--          {{subject}}-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <!-- Exam Table -->
+      <table mat-table [dataSource]="exams" class="mat-elevation-z8 exam-table">
+        <!-- Date Column -->
+        <ng-container matColumnDef="disciplina">
+          <th mat-header-cell *matHeaderCellDef> Disciplina </th>
+          <td mat-cell *matCellDef="let element"> {{element.disciplina}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="data">
+          <th mat-header-cell *matHeaderCellDef> Data </th>
+          <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+        </ng-container>
+
+        <!-- Ora Column -->
+        <ng-container matColumnDef="ora">
+          <th mat-header-cell *matHeaderCellDef> Ora </th>
+          <td mat-cell *matCellDef="let element"> {{element.ora}} </td>
+        </ng-container>
+
+        <!-- Sala Column -->
+        <ng-container matColumnDef="sala">
+          <th mat-header-cell *matHeaderCellDef> Sala </th>
+          <td mat-cell *matCellDef="let element"> {{element.sala}} </td>
+        </ng-container>
+
+        <!-- Forma evaluare Column -->
+        <ng-container matColumnDef="forma">
+          <th mat-header-cell *matHeaderCellDef> Forma evaluare </th>
+          <td mat-cell *matCellDef="let element"> {{element.forma}} </td>
+        </ng-container>
+
+        <!-- Credite Column -->
+        <ng-container matColumnDef="credite">
+          <th mat-header-cell *matHeaderCellDef> Numar credite </th>
+          <td mat-cell *matCellDef="let element"> {{element.credite}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

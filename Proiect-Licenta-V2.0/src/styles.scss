@@ -1,0 +1,83 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+mat.$theme-ignore-duplication-warnings: true;
+
+// Define palettes and themes for light and dark modes
+// Light Theme Palettes
+$light-primary: mat.define-palette(mat.$light-blue-palette, 500);
+$light-accent: mat.define-palette(mat.$amber-palette, 300);
+$light-warn: mat.define-palette(mat.$red-palette);
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+    warn: $light-warn,
+  ),
+  typography: mat.define-typography-config(),
+));
+
+// Dark Theme Palettes
+$dark-primary: mat.define-palette(mat.$green-palette, A700);
+$dark-accent: mat.define-palette(mat.$orange-palette, 800);
+$dark-warn: mat.define-palette(mat.$purple-palette, 400);
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+    warn: $dark-warn,
+  ),
+  typography: mat.define-typography-config(),
+));
+
+// Light Theme Styles
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+
+  --background-color: #{mat.get-color-from-palette(mat.$grey-palette, 50)};
+  --text-color: black;
+  --secondary-background-color: #{mat.get-color-from-palette(mat.$grey-palette, 100)};
+  --button-background-color: #{mat.get-color-from-palette($light-primary)};
+  --button-text-color: white;
+  --border-color: rgba(0, 0, 0, 0.12);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+  }
+}
+
+// Dark Theme Styles
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+
+  --background-color: #{mat.get-color-from-palette(mat.$grey-palette, 900)};
+  --text-color: white;
+  --secondary-background-color: #{mat.get-color-from-palette(mat.$grey-palette, 800)};
+  --button-background-color: #{mat.get-color-from-palette($dark-primary)};
+  --button-text-color: white;
+  --border-color: rgba(255, 255, 255, 0.12);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+  }
+}
+
+// Smooth transition for theme changes
+body,
+.navbar,
+.main-container,
+a {
+  transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out, border-color 0.2s ease-in-out !important;
+}

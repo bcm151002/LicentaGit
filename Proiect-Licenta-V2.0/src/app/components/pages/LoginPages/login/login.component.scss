@@ -1,0 +1,41 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.login-card {
+  width: 300px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.themeSelector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.success-message {
+  color: green;
+  margin-top: 10px;
+}

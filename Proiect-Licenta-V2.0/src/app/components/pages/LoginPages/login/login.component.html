@@ -1,0 +1,65 @@
+<div class="main-container">
+  <app-theme-selector class="themeSelector"></app-theme-selector>
+
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form (ngSubmit)="login()">
+        <mat-form-field appearance="fill" class="login-input">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Ex. student123"
+            [ngModel]="username()"
+            (ngModelChange)="username.set($event)"
+            name="username"
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="login-input">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="hide() ? 'password' : 'text'"
+            [ngModel]="password()"
+            (ngModelChange)="password.set($event)"
+            name="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="clickEvent($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()"
+          >
+            <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <div *ngIf="successMessage" class="success-message">
+          {{ successMessage }}
+        </div>
+
+        <div>
+          <button type="button" mat-button color="accent" (click)="openResetPasswordDialog($event)">Forgot Password?</button>
+        </div>
+
+        <div class="login-actions">
+          <button mat-raised-button color="primary" type="submit">Login</button>
+          <button mat-button color="warn" type="reset">Reset</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

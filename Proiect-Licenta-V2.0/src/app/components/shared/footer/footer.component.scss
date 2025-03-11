@@ -1,0 +1,41 @@
+.footer-toolbar {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  //padding: 10px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.footer-links a {
+  margin-left: 15px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Asigură ca footer-ul este împins la baza paginii dacă conținutul este scurt */
+body, html {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
